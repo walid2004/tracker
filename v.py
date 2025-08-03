@@ -19,10 +19,13 @@ def accessor():
 
 def search(term):
     results=[]
+    listbox.delete(0, tk.END)  
     data= accessor()
     for job in data:
         if job['company']==term:
             results.append(job)
+            listbox.insert(tk.END, f"{job['company']} | {job['position']} | {job['status']} | {job['time']}")
+            print(job)
     return results
 
 
