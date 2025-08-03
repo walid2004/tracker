@@ -1,11 +1,12 @@
 import json
 import tkinter as tk
-import time
+import datetime
 
 
-def add(x):
-    with open('w+','history.json') as f:
-        datas = json.load(f)
+def add(name,position,status):
+    x={'company':name,'position':position, 'status':status, 'time':str(datetime.datetime.now())}
+    with open('history.json','w+') as f:
+        datas = json.loads(f)
         datas.append(x)
         json.dump(datas,f)
 
@@ -32,7 +33,9 @@ status.grid(row=2,column=1)
 search_button = tk.Button(root, text='Search')
 search_button.grid(row=3,column=1)
 
-add_button = tk.Button(root, text='Add')
+add_button = tk.Button(root, text='Add',command=lambda: add(naming.get(),position.get(),status.get()))
 add_button.grid(row=3,column=0)
+
+print('')
 
 root.mainloop()
