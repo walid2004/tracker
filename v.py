@@ -17,19 +17,22 @@ def accessor():
 root = tk.Tk()
 root.title('J.O.B')
 
+tk.Label(text='Company').grid(row=0, column=0)
 naming = tk.Entry(root,width=40)
-naming.pack()
+naming.grid(row=0,column=1)
 
-position = tk.Entry(root)
-position.pack
+tk.Label(text='Position').grid(row=1, column=0)
+position = tk.Entry(root,width=40)
+position.grid(row=1,column=1)
 
-status = tk.Entry(root)
-status.pack()
+tk.Label(text='Position').grid(row=2, column=0)
+status = tk.Entry(root,width=40)
+status.grid(row=2,column=1)
 
 search_button = tk.Button(root, text='Search')
-search_button.pack()
+search_button.grid(row=3,column=1)
 
 add_button = tk.Button(root, text='Add')
-add_button.pack()
+add_button.grid(row=3,column=0)
 
 root.mainloop()
